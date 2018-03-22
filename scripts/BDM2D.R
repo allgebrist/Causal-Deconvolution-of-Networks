@@ -46,24 +46,6 @@ stringify <- function(smallBlock){
   paste0(c(t(smallBlock)), collapse ="")
 }
 
-blockEntropy <- function(mat, blockSize, offset){
-  
-  parts <- myPartition(mat, blockSize, offset)
-  
-  flatSquares <- unlist(lapply(parts, stringify))
-  
-  squaresTally <- as.data.frame(table(flatSquares))
-  
-  rownames(squaresTally) <- squaresTally$flatSquare
-  
-  squaresTally$flatSquares <- NULL
-  
-  probs = squaresTally[, 1]/nrow(squaresTally)
-  
-  return(-sum(probs*log2(probs)))
-  
-}
-
 bdm2D <- function(mat, blockSize, offset){
   
   parts <- myPartition(mat, blockSize, offset)
