@@ -1,7 +1,7 @@
 library("acss")
 library("igraph")
 
-source("C:/Users/Familia Zea Lobo/Causal-Deconvolution-of-Networks/scripts/BDM2D.R")
+source("scripts/BDM2D.R")
 
 deconvolve <- function(original_graph, blockSize, offset) {
   
