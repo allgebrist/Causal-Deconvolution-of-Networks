@@ -1,1 +1,1 @@
-# Causal-Deconvolution-of-Networks
+# Causal Deconvolution of Networks
