@@ -1,4 +1,5 @@
 library("acss")
+library("dplyr")
 library("igraph")
 
 source("scripts/BDM2D.R")
@@ -38,3 +39,15 @@ deconvolve <- function(original_graph, block_size, offset) {
     
     return(edge_deletions_df[neutral_elements, ])
 }
+
+
+
+###################################
+############ TEST CASE ############
+###################################
+
+# start.time <- Sys.time()
+# deconvolve(make_graph("Frucht"),4,1)
+# end.time <- Sys.time()
+# time.elapsed <-end.time - start.time
+# print (time.elapsed)
