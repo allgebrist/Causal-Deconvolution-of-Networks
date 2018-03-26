@@ -3,10 +3,10 @@ library("igraph")
 
 source("scripts/BDM2D.R")
 
-deconvolve <- function(original_graph, blockSize, offset) {
+deconvolve <- function(original_graph, block_size, offset) {
   
     original_matrix   <- as.matrix(as_adjacency_matrix(original_graph))
-    original_bdm      <- bdm2D(original_matrix, blockSize = blockSize, offset = offset)
+    original_bdm      <- bdm2D(original_matrix, block_size, offset)
     
     edge_deletions_df <- as_data_frame(original_graph, what = "edges")
     deletion_columns  <- c("bdm_value", "information_loss")
@@ -21,12 +21,20 @@ deconvolve <- function(original_graph, blockSize, offset) {
         
         deleted_edge_matrix <- as.matrix(as_adjacency_matrix(deleted_edge_graph))
         
-        deleted_edge_bdm    <- bdm2D(deleted_edge_matrix, blockSize = blockSize, offset = offset)
+        deleted_edge_bdm    <- bdm2D(deleted_edge_matrix, block_size, offset)
         
         
         edge_deletions_df[i, ]$bdm_value        <- deleted_edge_bdm
         edge_deletions_df[i, ]$information_loss <- original_bdm - deleted_edge_bdm
     }
     
-    return(edge_deletions_df)
+    no_info_gain <- edge_deletions_df$information_loss > 0
+    minimal_loss <- min(edge_deletions_df[no_info_gain, ]$information_loss)
+    
+    neutral_elements <- edge_deletions_df$information_loss == minimal_loss
+    
+    #print(minimal_loss)
+    #print(neutral_elements)
+    
+    return(edge_deletions_df[neutral_elements, ])
 }
