@@ -1,4 +1,5 @@
 library("acss")
+library("dplyr")
 library("igraph")
 source("BDM2D.R")
 
@@ -27,6 +28,7 @@ deconvolve <- function(original_graph, block_size, offset, desired_components = 
         
         edge_deletions_df[i, ]$bdm_value        <- deleted_edge_bdm
         edge_deletions_df[i, ]$information_loss <- original_bdm - deleted_edge_bdm
+<<<<<<< HEAD
       }
       
       no_info_gain <- edge_deletions_df$information_loss > 0
@@ -50,6 +52,19 @@ deconvolve <- function(original_graph, block_size, offset, desired_components = 
   #print(neutral_elements)
   
   return(original_graph)
+=======
+    }
+    
+    no_info_gain <- edge_deletions_df$information_loss > 0
+    minimal_loss <- min(edge_deletions_df[no_info_gain, ]$information_loss)
+    
+    neutral_elements <- edge_deletions_df$information_loss == minimal_loss
+    
+    #print(minimal_loss)
+    #print(neutral_elements)
+    
+    return(edge_deletions_df[neutral_elements, ])
+>>>>>>> 64ee9b9f22f21ee47d6faf614fc6c48e03b71889
 }
 
 
@@ -62,4 +77,8 @@ deconvolve <- function(original_graph, block_size, offset, desired_components = 
 # deconvolve(make_graph("Frucht"),4,1)
 # end.time <- Sys.time()
 # time.elapsed <-end.time - start.time
+<<<<<<< HEAD
 # print(time.elapsed)
+=======
+# print (time.elapsed)
+>>>>>>> 64ee9b9f22f21ee47d6faf614fc6c48e03b71889
