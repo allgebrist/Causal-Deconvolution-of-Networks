@@ -39,17 +39,17 @@ deconvolve <- function(original_graph, block_size, offset, desired_components = 
         
         for(i in 1:nrow(edge_deletions_df)) {
           
-          original_graph  <- delete_edges(original_graph, 
-                                              paste0(edge_deletions_df[i, ]$from,
-                                                     "|",edge_deletions_df[i, ]$to))
-        
+            original_graph  <- delete_edges(original_graph, 
+                                                paste0(edge_deletions_df[i, ]$from,
+                                                       "|",edge_deletions_df[i, ]$to))
+          
         }
     
     }
     
     return(original_graph)
   
-    }
+}
 
 
 
