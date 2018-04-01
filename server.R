@@ -11,7 +11,7 @@ shinyServer(function(input, output, session) {
     
     
     observeEvent(input$n_components, {
-      
+
       updateSliderInput(session,
                         "n_components",
                         max = vcount(react_graph$g))
@@ -29,8 +29,6 @@ shinyServer(function(input, output, session) {
     
     
     output$graph_plot <- renderPlot({
-        
-        input$eval_button
 
         plot(react_graph$g, edge.width = 2, edge.color = "Firebrick1", 
              vertex.color = "Lightblue2", vertex.size = 25, 
@@ -40,8 +38,6 @@ shinyServer(function(input, output, session) {
     
     output$graph2_plot <- renderPlot({
         
-        input$eval_button
-        
         react_graph$g_decomposed <- deconvolve(react_graph$g, 4, 1, input$n_components)
         
         plot(react_graph$g_decomposed, edge.width = 2, edge.color = "Firebrick1",
@@ -50,13 +46,15 @@ shinyServer(function(input, output, session) {
     })
     
     
-    #output$removed_edges <- renderText({
+    output$removed_edges <- renderText({
+        
+        decomposed_df <- as_data_frame(react_graph$g %m% 
+                                         react_graph$g_decomposed, what = "edges")
+        
+        isolate({
+            paste0(decomposed_df$from,"|",decomposed_df$to,"  ")
+        })
       
-    #    input$eval_button
-    #    isolate({
-    #      paste0(E(g %m% g_decomposed))
-    #    })
-      
-    #})
+    })
     
 })

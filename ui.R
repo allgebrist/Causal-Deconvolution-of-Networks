@@ -26,12 +26,7 @@ shinyUI(fluidPage(
             
             sliderInput(inputId = "n_components",
                         label = "Number of desired subcomponents",
-                        min = 1, max = 10, value = 1, step = 1),
-            
-            actionButton("eval_button", "Evaluate", 
-                         style = "color: #fff; 
-                         background-color: #f63; 
-                         border-color: #f63")),
+                        min = 1, max = 10, value = 1, step = 1)),
         
         mainPanel(
             
@@ -41,7 +36,10 @@ shinyUI(fluidPage(
                      plotOutput("graph_plot")),
               column(width = 6,
                      HTML('<center><h3>Decomposed graph</h3></center>'),
-                     plotOutput("graph2_plot"))
+                     plotOutput("graph2_plot")),
+              div(p("Removed edges: ", textOutput(outputId = "removed_edges")),
+                  style = "font-size:120%",
+                  align = "center")
             ))
       
       )
