@@ -1,6 +1,7 @@
 library("shiny")
 library("igraph")
 source("deconvolve.R")
+source("scripts/loadGraph.R")
 
 shinyServer(function(input, output, session) {
 
@@ -22,7 +23,7 @@ shinyServer(function(input, output, session) {
       
         in_file <- input$file
         
-        if(is.null(inFile$datapath)){} 
+        if(is.null(in_file$datapath)){} 
         else {react_graph$g <- loadGraphPA(in_file$datapath)}
       
     }, ignoreInit = FALSE) 
