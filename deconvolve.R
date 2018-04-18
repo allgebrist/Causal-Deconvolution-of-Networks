@@ -33,9 +33,9 @@ deconvolve <- function(original_graph, block_size, offset, desired_components = 
         no_info_gain <- edge_deletions_df$information_loss > 0
         minimal_loss <- min(edge_deletions_df[no_info_gain, ]$information_loss)
         
-        popo_elements <- edge_deletions_df$information_loss == minimal_loss
+        minloss_elements <- edge_deletions_df$information_loss == minimal_loss
         
-        edge_deletions_df <- edge_deletions_df[popo_elements, ]
+        edge_deletions_df <- edge_deletions_df[minloss_elements, ]
         
         for(i in 1:nrow(edge_deletions_df)) {
           
