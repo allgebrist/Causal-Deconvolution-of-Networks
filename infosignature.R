@@ -44,7 +44,7 @@ get_info_signature <- function(original_graph, block_size, offset) {
 
 ###### INFORMATION SIGNATURE ######
 
-# is <- get_info_signature(make_graph("Frucht"),4,1)
+# is <- get_info_signature(make_graph("Frucht"),4,4)
 # plot(log(is$information_loss)+80, xlab = "edges sorted by max info value", ylab = "log info values", col = "red")
 # lines(log(is$information_loss)+80, col = "red")
 
