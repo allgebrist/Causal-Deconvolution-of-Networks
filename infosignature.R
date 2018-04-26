@@ -59,4 +59,4 @@ get_info_signature <- function(original_graph, block_size, offset) {
 # }
 # plot(diffs, xlab = "edges sorted by max info value", ylab = "sequential info differences", col = "blue")
 # lines(diffs, col = "blue")
-# curve(log(2)*x^0, col = "purple", add = TRUE)
+# curve(log2(2)*x^0, col = "purple", add = TRUE)

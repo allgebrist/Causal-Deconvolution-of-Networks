@@ -1,6 +1,7 @@
 library("shiny")
 library("igraph")
 source("deconvolve.R")
+source("infosignature.R")
 source("scripts/loadGraph.R")
 
 shinyServer(function(input, output, session) {
@@ -39,7 +40,7 @@ shinyServer(function(input, output, session) {
     
     output$graph2_plot <- renderPlot({
         
-        react_graph$g_decomposed <- deconvolve(react_graph$g, 4, 1, input$n_components)
+        react_graph$g_decomposed <- deconvolve(react_graph$g, 4, 4, input$n_components)
         
         plot(react_graph$g_decomposed, edge.width = 2, edge.color = "Firebrick1",
              vertex.color = "Lightblue2", vertex.size = 25, 
