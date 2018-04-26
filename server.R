@@ -6,7 +6,7 @@ source("scripts/loadGraph.R")
 shinyServer(function(input, output, session) {
 
     g <- make_graph("Frucht")
-    g_decomposed <- deconvolve(g, 4, 1, 2)
+    g_decomposed <- deconvolve(g, 4, 4, 2)
     
     react_graph <- reactiveValues(g = g, g_decomposed = g_decomposed)
     

@@ -55,8 +55,6 @@ get_info_signature <- function(original_graph, block_size, offset) {
 # for(i in 1:nrow(is)) {
 #      if(i != nrow(is)) {
 #          diffs <- c(diffs, is$information_loss[i]-is$information_loss[i+1])
-#      } else {
-#          break
 #      }
 # }
 # plot(diffs, xlab = "edges sorted by max info value", ylab = "sequential info differences", col = "blue")
