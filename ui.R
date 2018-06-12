@@ -24,24 +24,33 @@ shinyUI(fluidPage(
                                  'text/csv',
                                  '.csv')),
             
-            sliderInput(inputId = "n_components",
-                        label = "Number of desired subcomponents",
-                        min = 1, max = 10, value = 1, step = 1)),
+            numericInput(inputId = "param_adjustment",
+                        label = "Adjust cutting parameter",
+                        value = 0.96, step = 0.1)),
         
         mainPanel(
             
             fluidRow(
-              column(width = 6,
-                     HTML('<center><h3>Original graph</h3></center>'),
-                     plotOutput("graph_plot")),
-              column(width = 6,
-                     HTML('<center><h3>Decomposed graph</h3></center>'),
-                     plotOutput("graph2_plot")),
-              div(p("Removed edges: ", textOutput(outputId = "removed_edges")),
-                  style = "font-size:120%",
-                  align = "center")
+                HTML('<center><h2>Causal separation results</h2></center>'),
+                column(width = 6,
+                       HTML('<center><h3>Original graph</h3></center>'),
+                       plotOutput("graph_plot")),
+                column(width = 6,
+                       HTML('<center><h3>Deconvolved graph</h3></center>'),
+                       plotOutput("graph2_plot")),
+                div(p("Removed edges: ", textOutput(outputId = "removed_edges")),
+                    style = "font-size:120%",
+                    align = "center"),
+                br(),
+                hr(),
+                br(),
+                HTML('<center><h2>Information properties</h2></center>'),
+                column(width = 6,
+                       plotOutput("info_signature")),
+                column(width = 6,
+                       plotOutput("cutting_points"))
             ))
-      
+        
       )
   
 ))
