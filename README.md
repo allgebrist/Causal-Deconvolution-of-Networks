@@ -1,8 +1,6 @@
 # Algorithmic Causal Deconvolution of Networks by Generative Mechanism
 
-This repository contains the [R Shiny](https://shiny.rstudio.com/) code of the online application for causal deconvolution of networks by the [Algorithmic Dynamics Lab](https://www.algorithmicdynamics.net/) and the [Algorithmic Nature Group](https://algorithmicnature.org/). This application is now live at [this website](http://www.complexitycalculator.com/deconvolution).
-
-The CTM datasets to be placed on the `data` folder can be downloaded [here](https://www.dropbox.com/sh/f76m3yb39n0edn9/AADofMJvIrxppmxPdvM9ROxqa?dl=0).
+This repository contains the [R Shiny](https://shiny.rstudio.com/) code of the online application for causal deconvolution of networks by generative mechanism by the [Algorithmic Dynamics Lab](https://www.algorithmicdynamics.net/) and the [Algorithmic Nature Group](https://algorithmicnature.org/). The application is live at [this website](http://www.complexitycalculator.com/deconvolution).
 
 ### If you use this tool please cite
 
