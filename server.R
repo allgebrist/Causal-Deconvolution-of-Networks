@@ -59,8 +59,10 @@ shinyServer(function(input, output, session) {
     output$info_signature <- renderPlot({
       
         is <- get_info_signature(react_graph$g, 4, 4)
+        
         plot(log(is$information_loss)+80, xlab = "edges sorted by max info value", 
              ylab = "log info values (+80)", main = "Information signature", col = "red")
+        
         lines(log(is$information_loss)+80, col = "red")
       
     })
