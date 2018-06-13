@@ -1,4 +1,4 @@
-# Causal Deconvolution of Network by Generative Mechanism
+# Algorithmic Causal Deconvolution of Networks by Generative Mechanism
 
 The CTM datasets to be placed on the `data` folder can be downloaded [here](https://www.dropbox.com/sh/f76m3yb39n0edn9/AADofMJvIrxppmxPdvM9ROxqa?dl=0).
 
