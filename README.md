@@ -12,3 +12,7 @@ H. Zenil, N.A. Kiani, A.A. Zea, J. Tegnér
 #### Maintainer: allan.zea [at] ciens.ucv.ve
 
 License: Affero GPL v3
+
+![alt text]:(http://complexitycalculator.com/images/algodynlogo.png)
+
+![alt text]:(http://complexitycalculator.com/images/AGroupSmall.png)
