@@ -13,6 +13,5 @@ H. Zenil, N.A. Kiani, A.A. Zea, J. Tegnér
 
 License: Affero GPL v3
 
-![alt text]:(http://complexitycalculator.com/images/algodynlogo.png)
 
-![alt text]:(http://complexitycalculator.com/images/AGroupSmall.png)
+<a href="https://www.algorithmicdynamics.net/"><img src="http://complexitycalculator.com/images/algodynlogo.png" width="262" height="152" /></a><a href="https://algorithmicnature.org/"><img src="http://complexitycalculator.com/images/AGroupSmall.png" width="228" height="157" hspace="30" /></a>
