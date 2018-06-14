@@ -7,7 +7,7 @@ source("scripts/loadGraph.R")
 
 shinyServer(function(input, output, session) {
     
-    g <- loadGraphPA("./data/testgraph.csv")
+    g <- load_graph("./data/testgraph.csv")
     g_decomposed <- deconvolve_with_termination(g, 4, 4, 0.96)
     
     react_graph <- reactiveValues(g = g, g_decomposed = g_decomposed)
@@ -22,7 +22,7 @@ shinyServer(function(input, output, session) {
     observeEvent(input$file, {
         
         if(is.null(input$file$datapath)) {} 
-        else {react_graph$g <- loadGraphPA(input$file$datapath)}
+        else {react_graph$g <- load_graph(input$file$datapath)}
       
     }, ignoreInit = FALSE) 
     
