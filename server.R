@@ -51,7 +51,11 @@ shinyServer(function(input, output, session) {
                                          react_graph$g_decomposed, what = "edges")
         
         isolate({
-            paste0(decomposed_df$from,"|",decomposed_df$to,"  ")
+            if(nrow(decomposed_df) > 0) {
+                paste0(decomposed_df$from,"|",decomposed_df$to,"  ")
+            } else {
+                paste0(warning("No edges have been removed."))
+            }
         })
       
     })
@@ -85,6 +89,8 @@ shinyServer(function(input, output, session) {
         lines(diffs, col = "blue")
         
         curve(log2(2)*x^0, col = "purple", add = TRUE)
+        
+        legend("topright", "log(2)", lty = 1, col = "purple")
       
     })
     

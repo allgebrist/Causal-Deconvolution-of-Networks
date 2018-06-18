@@ -32,6 +32,7 @@ get_info_signature <- function(original_graph, block_size, offset) {
     edge_deletions_df <- edge_deletions_df[order(-edge_deletions_df$information_loss), ]
 
     return(edge_deletions_df)
+    
 }
 
 

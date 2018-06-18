@@ -31,9 +31,13 @@ deconvolve_with_termination <- function(original_graph, block_size, offset, epsi
       
     for(i in 1:length(cutting_points)) {
       
-        original_graph  <- delete_edges(original_graph, 
+        if(length(cutting_points) > 0) {
+          
+            original_graph  <- delete_edges(original_graph, 
                                             paste0(information_signature[cutting_points[i], ]$from,
                                                    "|", information_signature[cutting_points[i], ]$to))
+        }
+
     }
     
     return(original_graph)

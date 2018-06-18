@@ -1,14 +1,11 @@
 library("shiny")
 library("shinythemes")
 
-orange_slider <- "
-.irs-bar,
-.irs-bar-edge,
-.irs-single,
-.irs-grid-pol {
-background: #f63;
-border-color: #f63;
-}"
+orange_slider <- ".irs-bar,
+                  .irs-bar-edge,
+                  .irs-single,
+                  .irs-grid-pol { background: #f63;
+                                  border-color: #f63; }"
 
 shinyUI(fluidPage(
   theme = shinytheme("united"),
@@ -25,7 +22,7 @@ shinyUI(fluidPage(
                                  '.csv')),
             
             numericInput(inputId = "param_adjustment",
-                        label = "Adjust cutting parameter",
+                        label = "Adjust cutting parameter*",
                         value = 0.96, step = 0.1)),
         
         mainPanel(
@@ -48,7 +45,13 @@ shinyUI(fluidPage(
                 column(width = 6,
                        plotOutput("info_signature")),
                 column(width = 6,
-                       plotOutput("cutting_points"))
+                       plotOutput("cutting_points")),
+                div(p("*This is the absolute distance between the differences 
+                      of consecutive values in the information signature 
+                      (the list of information values of all edges 
+                      sorted by maximum contribution) and log(2)."),
+                    style = "font-size:90%",
+                    align = "justify")
             ))
         
       )

@@ -3,7 +3,7 @@ library("igraph")
 load_graph <- function(data_path) {
     
     loaded_df <- read.csv(data_path,
-                          header=FALSE,
+                          header = FALSE,
                           sep=',',
                           quote="'",
                           stringsAsFactors = FALSE,
@@ -16,8 +16,7 @@ load_graph <- function(data_path) {
     loaded_mat <- as.matrix(loaded_df)
     
     g <- graph_from_adjacency_matrix(loaded_mat) %>%
-            set_vertex_attr("label", value = rownames(loaded_df) )
-    
+            set_vertex_attr("label", value = rownames(loaded_df))
     
     return(g)
 }
