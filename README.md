@@ -5,7 +5,7 @@ This repository contains the [R Shiny](https://shiny.rstudio.com/) code of the o
 ### If you use this tool please cite
 
 H. Zenil, N.A. Kiani, A.A. Zea, J. Tegnér,
-**Ab initio Algorithmic Causal Deconvolution of Intertwined Programs and Networks by Generative Mechanism**
+**Ab initio Algorithmic Causal Deconvolution of Intertwined Programs and Networks by Generative Mechanism**,
 [arXiv:1802.09904](https://arxiv.org/abs/1802.09904)
  
 #### Maintainer: Allan A. Zea (allan.zea [at] ciens.ucv.ve)
