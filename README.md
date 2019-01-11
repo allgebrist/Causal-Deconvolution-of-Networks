@@ -1,5 +1,4 @@
-# Causal Deconvolution of Networks 
-# by Algorithmic Generative Models
+# Causal Deconvolution of Networks by Algorithmic Generative Models
 
 This repository contains the [R Shiny](https://shiny.rstudio.com/) code of the online application of causal deconvolution of networks by algorithic generative models by the [Algorithmic Dynamics Lab](https://www.algorithmicdynamics.net/) and the [Algorithmic Nature Group](https://algorithmicnature.org/). The application is live at [this website](http://www.complexitycalculator.com/deconvolution).
 
