@@ -6,7 +6,7 @@ This repository contains the [R Shiny](https://shiny.rstudio.com/) code of the o
 
 H. Zenil, N.A. Kiani, A. A. Zea, J. Tegnér, **Causal Deconvolution by Algorithmic Generative Models**, Nature Machine Intelligence, vol 1(1), pp. 58-66, 2019. [[article]](https://www.nature.com/articles/s42256-018-0005-0)
 
-For a quick description of the project, please refer to this [video release](https://www.youtube.com/watch?v=rkmz7DAA-t8) by Nature.
+For a quick explanation of the project, please refer to this [video release](https://www.youtube.com/watch?v=rkmz7DAA-t8) by Nature.
  
 #### Maintainer: Allan A. Zea (allan.zea [at] ciens.ucv.ve)
 
