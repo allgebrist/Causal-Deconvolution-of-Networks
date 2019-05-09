@@ -27,7 +27,7 @@ get_info_signature <- function(original_graph, block_size, offset) {
         edge_deletions_df[i, ]$information_loss <- original_bdm - deleted_edge_bdm
       
     }
-    
+    # This condition must be revised
     edge_deletions_df <- edge_deletions_df[edge_deletions_df$information_loss > 0, ]
     edge_deletions_df <- edge_deletions_df[order(-edge_deletions_df$information_loss), ]
 
